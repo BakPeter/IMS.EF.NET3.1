@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerContracts", "LoggerCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{CA127315-9B98-4DCD-97DE-3045E71FBD21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceResponse", "ServiceResponse\ServiceResponse.csproj", "{79F07AC9-6570-43CA-879D-3326156C7547}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{CA127315-9B98-4DCD-97DE-3045E71FBD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA127315-9B98-4DCD-97DE-3045E71FBD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA127315-9B98-4DCD-97DE-3045E71FBD21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F07AC9-6570-43CA-879D-3326156C7547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F07AC9-6570-43CA-879D-3326156C7547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F07AC9-6570-43CA-879D-3326156C7547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F07AC9-6570-43CA-879D-3326156C7547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{D8C90695-0B24-43F0-BB97-ED279E771EB3} = {4E08B7F6-A0BD-44E8-ABAF-79D5A3EA5793}
 		{14239293-7A8B-4C83-A082-C602A1F884D6} = {F6C03A0E-02A4-478A-82EF-573240EC884E}
 		{CA127315-9B98-4DCD-97DE-3045E71FBD21} = {4E08B7F6-A0BD-44E8-ABAF-79D5A3EA5793}
+		{79F07AC9-6570-43CA-879D-3326156C7547} = {4E08B7F6-A0BD-44E8-ABAF-79D5A3EA5793}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA0F7682-4CAF-4A41-97A5-43A9A6FC3452}
