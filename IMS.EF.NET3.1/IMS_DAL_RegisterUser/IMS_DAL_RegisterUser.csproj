@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <ProjectReference Include="..\IMS_DTO_RegisterUser\IMS_DTO_RegisterUser.csproj" />
+    <ProjectReference Include="..\ServiceResponse\ServiceResponse.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ServiceResponse
+namespace IMS_DTO_RegisterUser
 {
-    public class ServiceResponse<T>
+    public class RegisterUserDTO
     {
-        public T Data { get; set; }
-        public bool Succsees { get; set; } = true;
-        public string Message { get; set; } = null;
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
 
         public override string ToString()
         {

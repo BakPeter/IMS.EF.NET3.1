@@ -8,4 +8,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IMS_Model_User\IMS_Model_User.csproj" />
+  </ItemGroup>
+
 </Project>

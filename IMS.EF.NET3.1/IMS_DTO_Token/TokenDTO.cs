@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ServiceResponse
+namespace IMS_DTO_Token
 {
-    public class ServiceResponse<T>
+    public class TokenDTO
     {
-        public T Data { get; set; }
-        public bool Succsees { get; set; } = true;
-        public string Message { get; set; } = null;
+        public string Value { get; set; }
 
         public override string ToString()
         {
