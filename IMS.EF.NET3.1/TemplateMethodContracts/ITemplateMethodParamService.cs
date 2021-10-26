@@ -6,14 +6,14 @@ namespace TemplateMethodContracts
 {
     public interface ITemplateMethodParamService<TResponse, TDTO> where TResponse : class
     {
-        public delegate Task<TResponse> ExecuteMethode(TDTO dto);
+        public delegate Task<TResponse> ExecuteMethod(TDTO dto);
 
 
         //public TResponse TemplateMethod(TDTO dto, MethodBase? invokeMethod, ExecuteMethode f)
         //    <TResponse, TDTO> where TResponse : class;
         public Task<TResponse> TemplateMethod(
             TDTO dto,
-            MethodBase? invokeMethod,
-            ExecuteMethode f);
+            string invokeMethodName,
+            ExecuteMethod f);
     }
 }

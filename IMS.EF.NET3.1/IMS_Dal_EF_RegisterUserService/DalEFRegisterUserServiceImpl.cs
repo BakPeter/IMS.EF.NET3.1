@@ -1,6 +1,7 @@
 ﻿using IMS_DAL_RegisterUser;
 using IMS_DTO_RegisterUser;
 using IMS_Model_User;
+using LoggingUtils;
 using Microsoft.Extensions.Logging;
 using ServiceResponse;
 using System;
@@ -25,7 +26,7 @@ namespace IMS_Dal_EF_RegisterUserService
 
         public async Task<ServiceResponse<RegisterUserResponse>> RegisterUser(RegisterUserDTO userDto)
         {          
-            var response =  await TemplateMethod<ServiceResponse<RegisterUserResponse>, RegisterUserDTO>(userDto, "RegisterUser");
+            var response =  await TemplateMethod<ServiceResponse<RegisterUserResponse>, RegisterUserDTO>(userDto, LogsUtils.GetCurrentAsyncMethodName());
             
             return response;
         }

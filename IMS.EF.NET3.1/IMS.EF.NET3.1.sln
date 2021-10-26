@@ -55,21 +55,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{334E0C4A-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApiTesting", "WebApiTesting", "{FE2CEDE4-636D-4C0F-A607-B0B083FC8856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserWebApiTesting", "UserWebApiTesting\UserWebApiTesting.csproj", "{4F6B6295-F005-44E5-A3AA-21F85A22E01A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserWebApiTesting", "UserWebApiTesting\UserWebApiTesting.csproj", "{4F6B6295-F005-44E5-A3AA-21F85A22E01A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenWebApiTokenTesting", "TokenWebApiTokenTesting\TokenWebApiTokenTesting.csproj", "{CB5D106F-DC27-48CB-B22A-91038D7A190F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenWebApiTokenTesting", "TokenWebApiTokenTesting\TokenWebApiTokenTesting.csproj", "{CB5D106F-DC27-48CB-B22A-91038D7A190F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaLInfraContracts", "DaLInfraContracts\DaLInfraContracts.csproj", "{2318BEE4-461D-4F4B-B0AA-A173F61A0550}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaLInfraContracts", "DaLInfraContracts\DaLInfraContracts.csproj", "{2318BEE4-461D-4F4B-B0AA-A173F61A0550}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDalService", "SQLDalService\SQLDalService.csproj", "{0C58502B-EABF-4DBE-A1DC-33B76D19DF90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLDalService", "SQLDalService\SQLDalService.csproj", "{0C58502B-EABF-4DBE-A1DC-33B76D19DF90}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceTesting", "ServiceTesting", "{35B305F7-F042-425D-A443-C577C0263E51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMS_Dal_EF_RegisterUserService", "IMS_Dal_EF_RegisterUserService\IMS_Dal_EF_RegisterUserService.csproj", "{9DDFCF1C-B5C4-4441-83BC-BFF650DCE5D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS_Dal_EF_RegisterUserService", "IMS_Dal_EF_RegisterUserService\IMS_Dal_EF_RegisterUserService.csproj", "{9DDFCF1C-B5C4-4441-83BC-BFF650DCE5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethodService", "TemplateMethodService\TemplateMethodService.csproj", "{4C2A8B52-4453-4539-B1A7-EC0E9957C43F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethodService", "TemplateMethodService\TemplateMethodService.csproj", "{4C2A8B52-4453-4539-B1A7-EC0E9957C43F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethodContracts", "TemplateMethodContracts\TemplateMethodContracts.csproj", "{E2678484-AC75-4DE2-AA02-74C58588511F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethodContracts", "TemplateMethodContracts\TemplateMethodContracts.csproj", "{E2678484-AC75-4DE2-AA02-74C58588511F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingUtils", "LoggingUtils\LoggingUtils.csproj", "{92250437-A92B-49BF-B2A3-8C41A7A83F84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{E2678484-AC75-4DE2-AA02-74C58588511F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2678484-AC75-4DE2-AA02-74C58588511F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2678484-AC75-4DE2-AA02-74C58588511F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92250437-A92B-49BF-B2A3-8C41A7A83F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92250437-A92B-49BF-B2A3-8C41A7A83F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92250437-A92B-49BF-B2A3-8C41A7A83F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92250437-A92B-49BF-B2A3-8C41A7A83F84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -175,6 +181,7 @@ Global
 		{9DDFCF1C-B5C4-4441-83BC-BFF650DCE5D6} = {334E0C4A-D744-47DB-A943-1078D909F112}
 		{4C2A8B52-4453-4539-B1A7-EC0E9957C43F} = {4E08B7F6-A0BD-44E8-ABAF-79D5A3EA5793}
 		{E2678484-AC75-4DE2-AA02-74C58588511F} = {F6C03A0E-02A4-478A-82EF-573240EC884E}
+		{92250437-A92B-49BF-B2A3-8C41A7A83F84} = {4E08B7F6-A0BD-44E8-ABAF-79D5A3EA5793}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA0F7682-4CAF-4A41-97A5-43A9A6FC3452}

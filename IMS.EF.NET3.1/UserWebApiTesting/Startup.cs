@@ -13,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TemplateMethodContracts;
+using TemplateMethodService;
 using UserWebApiTesting.Data;
 
 namespace UserWebApiTesting
@@ -31,13 +33,14 @@ namespace UserWebApiTesting
         {
             services.AddDbContext<RegisterUserContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
             //services.AddDbContext<RegisterUserContext>(options =>
             //    options.UseSqlServer(RegisterUserContext.ConnectionSettings.ConnectionString));
 
             services.AddControllers();
 
-            services.AddTransient(typeof(IDalRegisterUserService), typeof(DalEFRegisterUserServiceImpl));
+            services.AddSingleton<ILogger>(provider => provider.GetRequiredService<ILogger<object>>());
+            services.AddScoped(typeof(IDalRegisterUserService), typeof(DalEFRegisterUserServiceImpl));
+            services.AddScoped(typeof(ITemplateMethodParamService<,>), typeof(TemplateMethodParamServiceImpl<,>));
 
         }
 

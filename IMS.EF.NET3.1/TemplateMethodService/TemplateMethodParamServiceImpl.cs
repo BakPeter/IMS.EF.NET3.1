@@ -1,4 +1,5 @@
 ﻿using DynamicLoaderService;
+using LoggingUtils;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using TemplateMethodContracts;
 namespace TemplateMethodService
 {
     public class TemplateMethodParamServiceImpl<TResponse, TDTO>
-        : ITemplateMethodParamService<TResponse, TDTO> where TResponse :  class
+        : ITemplateMethodParamService<TResponse, TDTO> where TResponse :  class where TDTO:class
     {
         protected readonly ILogger _logger;
 
@@ -19,20 +20,20 @@ namespace TemplateMethodService
             _logger = logger;
         }
 
-        public Task<TResponse>TemplateMethod(TDTO dto, MethodBase invokeMethod, ITemplateMethodParamService<TResponse, TDTO>.ExecuteMethode f)
+        public async Task<TResponse>TemplateMethod(TDTO dto, string  invokeMethodName, ITemplateMethodParamService<TResponse, TDTO>.ExecuteMethod f)
         {
+            var methodName = LogsUtils.GetCurrentAsyncMethodName();
+
             try
             {
-                Task<TResponse> retVal = default;
-
-                if (invokeMethod != null)
-                    _logger.LogInformation("Begin Method : {0} => {1}", invokeMethod.Name, MethodBase.GetCurrentMethod().Name);
+                if (invokeMethodName != null)
+                    _logger.LogInformation("Begin Method : {0} => {1}", invokeMethodName, methodName);
                 else
-                    _logger.LogInformation("Begin Method : {0}", MethodBase.GetCurrentMethod().Name);
+                    _logger.LogInformation("Begin Method : {0}", methodName);
 
                 _logger.LogInformation("Parameters:{0}", dto.ToString());
                 #region ConcreteImplementation
-                retVal = f(dto);
+                TResponse retVal = await f(dto);
                 _logger.LogInformation("RetVal:{0}", retVal.ToString());
                 return retVal;
                 #endregion
@@ -44,10 +45,10 @@ namespace TemplateMethodService
             }
             finally
             {
-                if (invokeMethod != null)
-                    _logger.LogInformation("End Method : {0} => {1}", invokeMethod.Name, MethodBase.GetCurrentMethod().Name);
+                if (invokeMethodName != null)
+                    _logger.LogInformation("End Method : {0} => {1}", invokeMethodName, methodName);
                 else
-                    _logger.LogInformation("EndMethod : {0}", MethodBase.GetCurrentMethod().Name);
+                    _logger.LogInformation("EndMethod : {0}", methodName);
             }
         }
     }

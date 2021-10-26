@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DynamicLoaderService\DynamicLoaderService.csproj" />
+    <ProjectReference Include="..\LoggingUtils\LoggingUtils.csproj" />
     <ProjectReference Include="..\TemplateMethodContracts\TemplateMethodContracts.csproj" />
   </ItemGroup>
 

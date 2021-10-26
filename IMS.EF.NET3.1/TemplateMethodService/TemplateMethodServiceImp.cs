@@ -1,7 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using LoggingUtils;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TemplateMethodContracts;
@@ -17,16 +19,19 @@ namespace TemplateMethodService
             _logger = logger;
         }
 
-        protected async Task<TResponse> TemplateMethod<TResponse, TDTO>(TDTO dto, string invokeMethod) where TResponse : class
+        protected async Task<TResponse> TemplateMethod<TResponse, TDTO>(TDTO dto, string invokedMethodName) where TResponse : class
         {
+            //var methodeName = GetCurrentMethod();
+            var methodeName = LogsUtils.GetCurrentAsyncMethodName();
+
             try
             {
                 //Task<TResponse> retVal = default;
 
-                if (invokeMethod != null)
-                    _logger.LogInformation("Begin Method : {0} => {1}", invokeMethod, "TemplateMethod");
+                if (invokedMethodName != null)
+                    _logger.LogInformation("Begin Method : {0} => {1}", invokedMethodName, methodeName);
                 else
-                    _logger.LogInformation("Begin Method : {0}", "TemplateMethod");
+                    _logger.LogInformation("Begin Method : {0}", methodeName);
 
                 _logger.LogInformation("Parameters:{0}", dto.ToString());
                 #region ConcreteImplementation
@@ -42,10 +47,10 @@ namespace TemplateMethodService
             }
             finally
             {
-                if (invokeMethod != null)
-                    _logger.LogInformation("End Method : {0} => {1}", invokeMethod, "TemplateMethod");
+                if (invokedMethodName != null)
+                    _logger.LogInformation("End Method : {0} => {1}", invokedMethodName, methodeName);
                 else
-                    _logger.LogInformation("EndMethod : {0}", "TemplateMethod");
+                    _logger.LogInformation("EndMethod : {0}", methodeName);
             }
         }
 
