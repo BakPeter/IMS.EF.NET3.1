@@ -10,8 +10,9 @@ using TemplateMethodContracts;
 
 namespace TemplateMethodService
 {
+    [LoaderAttribute(typeof(ITemplateMethodParamService<,>), typeof(TemplateMethodParamServiceImpl<,>), Policy.Scoped)]
     public class TemplateMethodParamServiceImpl<TResponse, TDTO>
-        : ITemplateMethodParamService<TResponse, TDTO> where TResponse :  class where TDTO:class
+        : ITemplateMethodParamService<TResponse, TDTO> where TResponse : class where TDTO : class
     {
         protected readonly ILogger _logger;
 
@@ -20,7 +21,7 @@ namespace TemplateMethodService
             _logger = logger;
         }
 
-        public async Task<TResponse>TemplateMethod(TDTO dto, string  invokeMethodName, ITemplateMethodParamService<TResponse, TDTO>.ExecuteMethod f)
+        public async Task<TResponse> TemplateMethod(TDTO dto, string invokeMethodName, ITemplateMethodParamService<TResponse, TDTO>.ExecuteMethod f)
         {
             var methodName = LogsUtils.GetCurrentAsyncMethodName();
 

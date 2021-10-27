@@ -1,5 +1,4 @@
-﻿using DynamicLoaderService;
-using IMS_Model_User;
+﻿using IMS_Model_User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
@@ -8,27 +7,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace IMS_Dal_EF_RegisterUserService
+namespace IMS_DAL_EF_GetUserService
 {
-    public class RegisterUserContext : DbContext
+    public class GetUserContext : DbContext
     {
-        public RegisterUserContext(DbContextOptions<RegisterUserContext> options) : base(options) { }
+        public GetUserContext (DbContextOptions<GetUserContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
     }
 
-
-    public class DesignTimeContextFactory : IDesignTimeDbContextFactory<RegisterUserContext>
+    public class DesignTimeContextFactory : IDesignTimeDbContextFactory<GetUserContext>
     {
-        public RegisterUserContext CreateDbContext(string[] args)
+        public GetUserContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = GetConfiguration();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             //var connectionString = RegisterUserContext.ConnectionSettings.ConnectionString;
 
-            var builder = new DbContextOptionsBuilder<RegisterUserContext>();
+            var builder = new DbContextOptionsBuilder<GetUserContext>();
             builder.UseSqlServer(connectionString);
-            return new RegisterUserContext(builder.Options);
+            return new GetUserContext(builder.Options);
         }
 
         private IConfigurationRoot GetConfiguration()

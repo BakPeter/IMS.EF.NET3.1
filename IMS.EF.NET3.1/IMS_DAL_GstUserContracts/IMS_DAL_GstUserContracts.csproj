@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IMS_DTO_GetUser\IMS_DTO_GetUser.csproj" />
+    <ProjectReference Include="..\ServiceResponse\ServiceResponse.csproj" />
+  </ItemGroup>
+
+</Project>

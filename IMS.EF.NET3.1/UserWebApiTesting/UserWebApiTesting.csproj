@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IMS_DAL_EF_GetUserService\IMS_DAL_EF_GetUserService.csproj" />
     <ProjectReference Include="..\IMS_Dal_EF_RegisterUserService\IMS_Dal_EF_RegisterUserService.csproj" />
     <ProjectReference Include="..\IMS_Model_Toeken\IMS_Model_Toeken.csproj" />
     <ProjectReference Include="..\IMS_Model_User\IMS_Model_User.csproj" />

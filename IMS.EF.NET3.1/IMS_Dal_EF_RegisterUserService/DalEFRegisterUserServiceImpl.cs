@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DynamicLoaderService;
 using IMS_DAL_RegisterUser;
 using IMS_DTO_RegisterUser;
 using IMS_Model_User;
@@ -14,6 +15,7 @@ using TemplateMethodService;
 
 namespace IMS_Dal_EF_RegisterUserService
 {
+    [LoaderAttribute(typeof(IDalRegisterUserService), typeof(DalEFRegisterUserServiceImpl), Policy.Scoped)]
     public class DalEFRegisterUserServiceImpl : TemplateMethodServiceImp, IDalRegisterUserService
     {
         private readonly RegisterUserContext _DbContext;

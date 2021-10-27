@@ -1,6 +1,5 @@
-using IMS_DAL_EF_GetUserService;
+using DynamicLoaderService;
 using IMS_Dal_EF_RegisterUserService;
-using IMS_DAL_GstUserContracts;
 using IMS_DAL_RegisterUser;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,15 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TemplateMethodContracts;
 using TemplateMethodService;
-using UserWebApiTesting.Data;
 
-namespace UserWebApiTesting
+namespace IMS_Services_RegisterUser
 {
     public class Startup
     {
@@ -32,25 +26,18 @@ namespace UserWebApiTesting
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddDbContext<RegisterUserContext>(options => 
+        {   
+            services.AddDbContext<RegisterUserContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDbContext<GetUserContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddDbContext<RegisterUserContext>(options =>
-            //    options.UseSqlServer(RegisterUserContext.ConnectionSettings.ConnectionString));
-
-            services.AddControllers();
 
             services.AddSingleton<ILogger>(provider => provider.GetRequiredService<ILogger<object>>());
-            
-            services.AddScoped(typeof(IDalRegisterUserService), typeof(DalEFRegisterUserServiceImpl));
-            services.AddScoped(typeof(IDalGetUserService), typeof(DalEFGetUserService));
-           
+            services.AddSingleton<IConfiguration>(provider => Configuration);
+            services.AddSingleton(MappingConfig.RegisterMaps().CreateMapper());
+
             services.AddScoped(typeof(ITemplateMethodParamService<,>), typeof(TemplateMethodParamServiceImpl<,>));
-           
-            //services.AddSingleton(IMS_Dal_EF_RegisterUserService.MappingConfig.RegisterMaps().CreateMapper());
-            services.AddSingleton(IMS_DAL_EF_GetUserService.MappingConfig.RegisterMaps().CreateMapper());
+            services.AddScoped(typeof(IDalRegisterUserService), typeof(DalEFRegisterUserServiceImpl));
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
