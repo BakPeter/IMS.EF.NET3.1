@@ -1,0 +1,27 @@
+Sql settings
+Model(EF)
+
+Possible Point For Git Commit
+
+DAL DTO's
+DAL Contracts
+Implement DAL required services
+DAL Implementaion(EF context impementation)
+DAL Testing
+
+Possible Point For Git Commit
+
+BLL DTO
+BLL Contracts
+Implement DAL and BLL required services
+BLL Implementation
+BLL Testing
+
+Possible Point For Git Commit
+
+WepApi implementation
+Web Api testing. Postman, WebApp.
+
+Possible Point For Git Commit
+
+Docker
