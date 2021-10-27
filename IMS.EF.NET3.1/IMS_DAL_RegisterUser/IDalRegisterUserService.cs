@@ -9,6 +9,6 @@ namespace IMS_DAL_RegisterUser
 {
     public interface IDalRegisterUserService
     {
-        Task<ServiceResponse<RegisterUserResponse>> RegisterUser(RegisterUserDTO user);
+        Task<ServiceResponse<RegisterUserResDTO>> RegisterUser(RegisterUserReqDTO user);
     }
 }

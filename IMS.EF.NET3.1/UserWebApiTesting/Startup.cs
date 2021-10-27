@@ -41,7 +41,7 @@ namespace UserWebApiTesting
             services.AddSingleton<ILogger>(provider => provider.GetRequiredService<ILogger<object>>());
             services.AddScoped(typeof(IDalRegisterUserService), typeof(DalEFRegisterUserServiceImpl));
             services.AddScoped(typeof(ITemplateMethodParamService<,>), typeof(TemplateMethodParamServiceImpl<,>));
-
+            services.AddSingleton(MappingConfig.RegisterMaps().CreateMapper());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

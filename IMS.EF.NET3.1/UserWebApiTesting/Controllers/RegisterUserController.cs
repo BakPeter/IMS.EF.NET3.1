@@ -15,11 +15,11 @@ namespace UserWebApiTesting.Controllers
     public class RegisterUserController : ControllerBase
     {
         private readonly IDalRegisterUserService _registerService;
-        private readonly ITemplateMethodParamService<ServiceResponse<RegisterUserResponse>, RegisterUserDTO> _templateLoggingService;
+        private readonly ITemplateMethodParamService<ServiceResponse<RegisterUserResDTO>, RegisterUserReqDTO> _templateLoggingService;
 
         public RegisterUserController(
             IDalRegisterUserService registerService,
-            ITemplateMethodParamService<ServiceResponse<RegisterUserResponse>, RegisterUserDTO> templateLoggingService)
+            ITemplateMethodParamService<ServiceResponse<RegisterUserResDTO>, RegisterUserReqDTO> templateLoggingService)
         {
             _registerService = registerService;
             _templateLoggingService = templateLoggingService;
@@ -27,7 +27,7 @@ namespace UserWebApiTesting.Controllers
 
         // POST api/<RegisterUserController>
         [HttpPost]
-        public async Task<ActionResult<ServiceResponse<RegisterUserResponse>>> Post([FromBody] RegisterUserDTO user)
+        public async Task<ActionResult<ServiceResponse<RegisterUserResDTO>>> Post([FromBody] RegisterUserReqDTO user)
         {
             //var response =  await _registerService.RegisterUser(user);
             var response = await _templateLoggingService.TemplateMethod(

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace IMS_DTO_RegisterUser
 {
-    public class RegisterUserDTO
+    public class RegisterUserReqDTO
     {
-        public string UserName { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 

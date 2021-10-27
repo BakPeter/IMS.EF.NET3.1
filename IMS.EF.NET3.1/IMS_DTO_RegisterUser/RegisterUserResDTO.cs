@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IMS_DTO_RegisterUser
 {
-    public class RegisterUserResponse
+    public class RegisterUserResDTO
     {
         public int UserId { get; set; }
 
